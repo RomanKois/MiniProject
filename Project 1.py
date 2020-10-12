@@ -154,13 +154,13 @@ flower(
     n = 7, 
     r = 60.0,
     angle =  60.0,
+
     stonkaHeight = 100,
     angleStonka = 30,
+    
     angleGround = 30,
     widthList = 100,
-    lenghtList = 40,
-
-)
+    lenghtList = 40,)
 
 
 flower(
@@ -174,9 +174,7 @@ flower(
     
     angleGround = 70,
     widthList = 10,
-    lenghtList = 150,
-
-)
+    lenghtList = 150,)
 
 
 
@@ -191,9 +189,9 @@ flower(
     
     angleGround = 40,
     widthList = 120,
-    lenghtList = 100,
+    lenghtList = 100,)
 
-)
+
 screen = turtle.Screen()
 screen.mainloop()
 
