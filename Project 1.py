@@ -196,5 +196,5 @@ flower(
 )
 screen = turtle.Screen()
 screen.mainloop()
-Z
+
 
