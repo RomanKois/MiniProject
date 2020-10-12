@@ -61,9 +61,7 @@ from math import sin, radians, pi
 #         t.fd(length)
 #         t.lt(angle)
 
-# def polygon(t, n, length):
-#     angle = 360.0 / n
-#     polyline(t, n, length, angle)
+
 
 # def arc(t, r, angle):
 #     arc_length = 2 * pi * r * angle / 360
@@ -86,10 +84,6 @@ def polyline(t, n, length, angle):
         t.fd(length)
         t.lt(angle)
 
-def polygon(t, n, length):
-    angle = 360.0/n
-    polyline(t, n, length, angle)
-
 
 def arc(t, r, angle):
     arc_length = 2 * pi * r * abs(angle) / 360
@@ -107,26 +101,26 @@ def petal(t, r, angle):
         arc(t, r, angle)
         t.lt(180-angle)
 
-def preponaStonka(t, stonkaHeight, angleStonka):
+def calculationOfR(t, stonkaHeight, angleStonka):
     r = (stonkaHeight/2) / sin(radians(angleStonka/2))
     arc(t, r, angleStonka)
 
 def stonka(t, stonkaHeight, angleStonka):
     t.rt(90+angleStonka/2)
-    preponaStonka(t, stonkaHeight, angleStonka)
+    calculationOfR(t, stonkaHeight, angleStonka)
     t.lt(180- angleStonka/2)
 
 def listy(t, angleGround, widthList, lenghtList):
     t.lt(90 - angleGround - widthList / 2)
 
     for i in range(2):
-        preponaStonka(t, lenghtList, widthList)
+        calculationOfR(t, lenghtList, widthList)
         t.lt(180-widthList)
 
     t.rt(180 - 2 * angleGround)
 
     for _ in range(2):
-        preponaStonka(t, lenghtList, widthList)
+        calculationOfR(t, lenghtList, widthList)
         t.lt(180 - widthList)
 
     t.lt(-angleGround + widthList / 2)
@@ -140,7 +134,6 @@ def move(t, length, stonkaHeight):
     t.pd()
 
     
-
 def flower(t, n, r, angle, stonkaHeight, angleStonka, angleGround, widthList, lenghtList, ):
     for i in range(n):
         petal(t, r, angle)
@@ -203,5 +196,5 @@ flower(
 )
 screen = turtle.Screen()
 screen.mainloop()
-
+Z
 
