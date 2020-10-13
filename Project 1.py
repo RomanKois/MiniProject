@@ -75,7 +75,7 @@ from math import sin, radians, pi
 
 # arc(bob, 120, 90)
 
-# kvety bez stonky
+# kvety 
 
 
 
@@ -138,6 +138,7 @@ def flower(t, n, r, angle, stonkaHeight, angleStonka, angleGround, widthList, le
     for i in range(n):
         petal(t, r, angle)
         t.lt(360.0/n)
+
     stonka(t, stonkaHeight, angleStonka)
     listy(t, angleGround, widthList, lenghtList)
     move(t, 200, stonkaHeight)
